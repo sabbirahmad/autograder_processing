@@ -1,0 +1,22 @@
+# Process Downloaded Files
+---------------------------------------------------------------------
+1. Download files from Blackboard
+2. Unzip it and rename the folder as "raw"
+3. Keep the "raw" folder and "process_files.py" script in the same folder. 
+4. Run the "process_file.py" script.
+5. It will create a "files" folder inside "raw" folder. The "files" folder will contain all the folders by student names and id. Each student folder will contain the submissions. If they have another folder inside the submission folder, the script will copy the "search.py" and "searchAgents.py" file under the student folder, which is needed for the autograder script
+6. Note that, the script cannot handle submissions that are not in ZIP format. The script will output instructions for the submitted files not in ZIP format. Those file needs to be manually copied in student folders. The students folder will be created by the script
+7. Copy the "files" folder in the "search" folder where the autograder will run
+
+---------------------------------------------------------------------
+
+# Run Autograder
+---------------------------------------------------------------------
+1. Take a fresh copy of "search" folder for PA1
+2. In the "search" folder, copy the "test.sh" script
+3. Make the script executable, if not already. (chmod +x test.sh)
+4. Run the script after copying the "files" folder in "search" folder
+5. The grades will be generated in the "grades.txt" file according to student folder names
+6. The script will output if "search.py" or "searchAgents.py" files are not found in the folder
+7. If the submitted python file does not run, the script may output error. In that case, delete the corresponding student folder from the "files" folder and run the script again. Handle that folder manually
+8. Note that running the script again will delete the previous "grades.txt" file
